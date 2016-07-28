@@ -26,8 +26,8 @@
         </div>
     </div>
 </form>
-    <script src="${ctx}/resources/js/jquery-1.12.1.min.js"></script>
-    <script src="${ctx}/resources/js/bootstrap.min.js"></script>
+    <script src="${ctx}/resources/jquery/jquery-1.12.1.min.js"></script>
+    <script src="${ctx}/resources/bootstrap/js/bootstrap.min.js"></script>
     <script>
 
     </script>

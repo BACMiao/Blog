@@ -12,7 +12,7 @@
 <head>
     <c:set var="ctx" value="${pageContext.request.contextPath}" />
     <title>登录</title>
-    <link href="${ctx}/resources/css/bootstrap.css" rel="stylesheet" type="text/css"/>
+    <link href="${ctx}/resources/bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
     <div id="loginModal" class="modal show text-center">
@@ -43,9 +43,9 @@
         </div>
     </div>
 
-<script src="${ctx}/resources/js/jquery-1.12.1.min.js"></script>
-<script src="${ctx}/resources/js/bootstrap.min.js"></script>
-<script src="${ctx}/resources/js/jquery.validate.js"></script>
+<script src="${ctx}/resources/jquery/jquery-1.12.1.min.js"></script>
+<script src="${ctx}/resources/bootstrap/js/bootstrap.min.js"></script>
+<script src="${ctx}/resources/jquery/jquery.validate.js"></script>
 
 <script type="text/javascript">
     $('#loginModal').modal({backdrop: 'static', keyboard: false}).css({

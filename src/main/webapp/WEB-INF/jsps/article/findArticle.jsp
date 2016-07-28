@@ -76,8 +76,8 @@
         <jsp:include page="../base/foot.jsp"/>
     </div>
 
-    <script src="${ctx}/resources/js/jquery-1.12.1.min.js"></script>
-    <script src="${ctx}/resources/js/bootstrap.js"></script>
+    <script src="${ctx}/resources/jquery/jquery-1.12.1.min.js"></script>
+    <script src="${ctx}/resources/bootstrap/js/bootstrap.js"></script>
     <script>
         $(function(){
             $("#slidershow").carousel({
