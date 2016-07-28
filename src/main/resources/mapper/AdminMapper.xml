@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.blog.dao.AdminDao">
+    <update id="updateAdminById" parameterType="com.blog.model.Admin">
+        UPDATE admin SET username=(#{username}), password=(#{password}) WHERE aid=#{aid}
+    </update>
+
+    <select id="findAdminByList" parameterType="com.blog.model.Admin" resultType="com.blog.model.Admin">
+        SELECT * FROM admin WHERE username=#{username} AND password=#{password}
+    </select>
+</mapper>

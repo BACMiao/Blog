@@ -1,0 +1,46 @@
+#header{
+    width: 1000PX;
+    height: 560px;
+    background: url("http://7xv9yx.com1.z0.glb.clouddn.com/head.jpg");
+    background-size: 100%;
+    margin:auto;
+    position:relative;
+    text-align:center;
+    top: 0;
+}
+#header #user{
+    position:relative;
+    text-align:center;
+    top: 50px;
+    margin:0px 75px 0px 75px;
+}
+#header #user ul{
+    list-style-type:none;
+    margin:0;
+    padding:0;
+    text-align:center;
+}
+#header #user li{
+    display:inline;
+}
+
+a.dh:link,a.dh:visited{
+    width:120px;
+    font-weight:bold;
+    color: white;
+    font-size: large;
+    text-align:center;
+    padding:10px 45px 0px 45px;
+    text-decoration:none;
+    text-transform:uppercase;
+}
+
+#header h1{
+    position:absolute;
+    top: 250px;
+    left: 80px;
+    font-size: 100px;
+    color: #5c92a9;
+}
+
+

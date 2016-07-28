@@ -1,0 +1,84 @@
+body{
+    background: -webkit-linear-gradient(#5bc0de , #babac4, #7ab5d3, #babac4, #4bb1cf); /* Safari 5.1 - 6.0 */
+    background: -o-linear-gradient(#5bc0de , #babac4, #7ab5d3, #babac4, #4bb1cf); /* Opera 11.1 - 12.0 */
+    background: -moz-linear-gradient(#5bc0de , #babac4, #7ab5d3, #babac4, #4bb1cf); /* Firefox 3.6 - 15 */
+    background: linear-gradient(#5bc0de , #babac4, #7ab5d3, #babac4, #4bb1cf); /* 标准的语法（必须放在最后） */
+}
+
+#main{
+    width: 1000PX;
+    /*padding-top: 0px;*/
+    background-color: white;
+    box-shadow: -8px 0px 8px #aaaaaa;
+    padding-bottom: 30px;
+    margin:auto;
+    position:relative;
+}
+
+#main #picture{
+    width: 900px;
+    height: 285px;
+    position:relative;
+    background-color: #f2f3f7;
+    left: 50px;
+    top: 45px;
+    box-shadow: 6px 6px 8px #aaaaaa;
+}
+#slidershow{
+    width: 450PX;
+    height: 250px;
+    float: left;
+    margin: 15px;
+
+}
+
+#motto{
+    width: 380PX;
+    height: 253px;
+    float: right;
+    margin: 15px;
+    font-family: 宋体;
+}
+#motto h2{
+    text-align:center;
+}
+
+.motto{
+    font-size: 18px;
+    margin: 15px;
+}
+
+#main #body{
+    width: 850px;
+    height: auto;
+    position:relative;
+    top: 75px;
+    left: 75px;
+    background-color: #f2f3f7;
+    border: 2px solid  #84b5cf;
+    box-shadow: 6px 6px 8px #aaaaaa;
+    word-wrap: break-word;
+    word-break: normal;
+    margin-bottom: 100px;
+}
+#main #body #article-title{
+    margin: 20px 50px 10px 50px;
+}
+
+#main #body #article-title p{
+    margin: 5px 0px 5px 0px;
+    font-size: large;
+    font-weight: bold;
+}
+
+#main #body #article-title .bottom{
+    color: #666666;
+}
+
+.article{
+    font-size: x-large;
+}
+
+#findArticle{
+    margin: 20px 50px 10px 50px;
+}

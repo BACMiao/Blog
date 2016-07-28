@@ -1,0 +1,32 @@
+#search{
+    width: 480px;
+    height: 80px;
+    top: 520px;
+    left: 250px;
+    background-color: #e4573f;
+    position:absolute;
+    box-shadow: 4px 4px 8px #aaaaaa;
+}
+
+#search #message{
+    background-color: white;
+    position:absolute;
+    left: 5px;
+    height: 80px;
+    width: 250px;
+}
+#search #input{
+    background-color: #88aa9a;
+    position:absolute;
+    right: 40px;
+    height: 80px;
+    width: 200px;
+}
+
+#button button{
+    border: none;
+    background-color:transparent;
+    position:absolute;
+    right: 5px;
+    top: 30px;
+}

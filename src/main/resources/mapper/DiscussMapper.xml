@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+<mapper namespace="com.blog.dao.DiscussDao">
+    <select id="findDiscussUser" parameterType="int" resultType="com.blog.model.DiscussCustom">
+        SELECT discuss.did, discuss.createTime, discuss.message, discuss.ownId, discuss.parentId, user.username
+        FROM discuss INNER JOIN user ON discuss.userId = user.uid
+        WHERE articleId=#{articleId} ORDER BY discuss.createTime
+    </select>
+
+    <insert id="insertDiscuss" parameterType="com.blog.model.Discuss">
+        INSERT INTO discuss(did, createTime, message, userId, articleId, ownId, parentId) VALUES (#{did},#{createTime},#{message},#{userId},#{articleId},#{ownId},#{parentId})
+    </insert>
+
+    <delete id="deleteDiscussById" parameterType="int">
+        DELETE FROM discuss WHERE did=#{did}
+    </delete>
+    
+    <select id="findDiscussById" parameterType="int" resultType="com.blog.model.Discuss">
+        SELECT * FROM discuss WHERE did=#{did}
+    </select>
+</mapper>

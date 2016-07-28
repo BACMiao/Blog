@@ -1,0 +1,54 @@
+#main #article{
+    width: 850px;
+    height: auto;
+    position:relative;
+    top: 50px;
+    left: 75px;
+    background-color: #f2f3f7;
+    border: 2px solid  #84b5cf;
+    box-shadow: 6px 6px 8px #aaaaaa;
+    margin-bottom: 75px;
+}
+
+#main #article #article-body{
+    margin: 20px 50px 10px 50px;
+    height: auto;
+    width: 750px;
+    word-wrap: break-word;
+    word-break: normal;
+}
+
+#main #article #discuss{
+    font-size: 16px;
+    margin: 10px 50px 3px 50px;
+    word-wrap: break-word;
+    word-break: normal;
+    clear: both;
+    overflow: hidden;
+}
+
+#main #article #discuss h4{
+    background-color: #7eb4d1;
+}
+
+#main #article #discuss h5{
+    background-color: #84dfeb;
+}
+
+#main #article #discuss textarea{
+    font-size: 16px;
+    margin: 5px 10px 10px 10px;
+    height: 200px;
+    width: 730px;
+}
+
+#main #article #discuss .button{
+    margin: 0px 20px 10px 0px;
+    float: right;
+}
+
+#main #article #discuss #reply{
+    margin: 5px 70px 5px 70px;
+}
+
+

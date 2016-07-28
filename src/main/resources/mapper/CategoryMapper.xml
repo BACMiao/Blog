@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.blog.dao.CategoryDao">
+    <select id="findCategoryByName" parameterType="java.lang.String" resultType="com.blog.model.Category">
+        SELECT * FROM  category WHERE categoryName=#{categoryName}
+    </select>
+
+    <select id="findCategoryById" parameterType="int" resultType="com.blog.model.Category">
+        SELECT * FROM  category WHERE cid=#{cid}
+    </select>
+
+    <select id="findAllCategory" resultType="com.blog.model.Category">
+        SELECT * FROM category
+    </select>
+
+    <insert id="insertCategory" parameterType="com.blog.model.Category">
+        INSERT INTO category(cid, categoryName) VALUES (#{cid},#{categoryName})
+    </insert>
+    
+    <delete id="deleteCategoryById" parameterType="int">
+        DELETE FROM category WHERE cid=#{cid}
+    </delete>
+
+    <update id="updateCategoryById" parameterType="com.blog.model.Category">
+        UPDATE category SET categoryName=(#{categoryName}), number=(#{number}) WHERE cid=#{cid}
+    </update>
+</mapper>

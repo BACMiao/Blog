@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper
+        PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<!-- namespace 命名空间，作用就是对sql进行分类化管理-->
+<mapper namespace="com.blog.dao.UserDao">
+    <sql id="query_user_where">
+        <if test="username!=null and username!=''">
+            AND username LIKE '%${username}%'
+        </if>
+    </sql>
+    <select id="findUserById" parameterType="int" resultType="com.blog.model.User">
+        SELECT * FROM user WHERE uid=#{uid}
+    </select>
+
+    <select id="findUserByName" parameterType="java.lang.String" resultType="com.blog.model.User">
+        SELECT * FROM user WHERE username=#{username}
+    </select>
+
+    <!-- 增加用户，parameterType：指定的输入参数类型是model，#{}中指定model的属性名（OGNL来获取）-->
+    <insert id="insertUser" parameterType="com.blog.model.User">
+        INSERT INTO user(uid, username, password, salt) VALUES (#{uid},#{username},#{password}, #{salt})
+    </insert>
+    
+    <delete id="deleteUserById" parameterType="int">
+        DELETE FROM user WHERE uid=#{uid}
+    </delete>
+
+    <!-- parameterType 指定user对象，包括id和更新信息，注意 id必须存在-->
+    <update id="updateUser" parameterType="com.blog.model.User">
+        UPDATE user SET username=(#{username}), password=(#{password}) WHERE uid=#{uid}
+    </update>
+
+    <select id="findUserByList" parameterType="com.blog.model.User" resultType="com.blog.model.User">
+        SELECT * FROM user
+        <!-- where 可以去掉条件中的第一个and-->
+        <where>
+            <include refid="query_user_where"></include>
+        </where>
+    </select>
+
+</mapper>
