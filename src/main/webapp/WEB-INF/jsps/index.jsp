@@ -71,7 +71,7 @@
                     <a href="/article/viewArticle?id=${article.id} " id="a1" style="text-decoration: none;" class="article">[${article.categoryName}]&nbsp;${article.title}</a>
                     <br/>
                     <p class="describe">${article.articleDescribe}</p>
-                    <div class="bottom"><fmt:formatDate value="${article.createTime}" pattern="yyyy-MM-dd HH:mm:ss"/>|评论(0)|浏览(0)|博客分类：${article.categoryName}</div>
+                    <div class="bottom"><fmt:formatDate value="${article.createTime}" pattern="yyyy-MM-dd HH:mm:ss"/>|博客分类：<a href="/article/findArticleByCid?cid=${article.categoryId}">${article.categoryName}</a></div>
                     <hr style="border-top-style:dotted"/>
                 </c:forEach>
             </div>

@@ -12,8 +12,10 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import java.util.List;
 
 /**
- *
- * Created by Black on 2016/6/5.
+ * @package: com.blog.controller
+ * @Author: 陈淼
+ * @Date: 2016/6/5
+ * @Description: 类别的控制类，用于拦截url为/category/*的所有请求
  */
 @Controller
 @RequestMapping("/category")
@@ -32,6 +34,7 @@ public class CategoryController {
         return "category/success";
     }
 
+    //获取所有类别的信息，使用json方法传递
     @RequestMapping(value = "/findAllCategory", produces = "text/html;charset=UTF-8")
     public @ResponseBody String findAllCategory() throws Exception {
         List<Category> categories = categoryService.findAllCategory();

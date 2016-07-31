@@ -1,8 +1,10 @@
 package com.blog.model;
 
 /**
- *
- * Created by Black on 2016/6/4.
+ * @package: com.blog.model
+ * @Author: 陈淼
+ * @Date: 2016/6/4
+ * @Description: 文章类型的模型类
  */
 public class Category {
     private int cid;

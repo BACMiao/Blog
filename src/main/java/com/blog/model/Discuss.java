@@ -3,14 +3,17 @@ package com.blog.model;
 import java.util.Date;
 
 /**
- * Created by Black on 2016/5/28.
+ * @package: com.blog.model
+ * @Author: 陈淼
+ * @Date: 2016/5/28
+ * @Description: 评论的模型类
  */
 public class Discuss {
     private int did;
-    private int userId;
-    private int articleId;
-    private String ownId;
-    private String parentId;
+    private int userId;      //发表评论的用户ID
+    private int articleId;   //评论的文章的ID
+    private String ownId;    //该评论的ID，其值为UUID所产生的随机值
+    private String parentId; //该评论回复的评论的ID，其值为UUID所产生的随机值
     private String message;
     private Date createTime;
 
@@ -70,16 +73,4 @@ public class Discuss {
         this.createTime = createTime;
     }
 
-    @Override
-    public String toString() {
-        return "Discuss{" +
-                "did=" + did +
-                ", userId=" + userId +
-                ", articleId=" + articleId +
-                ", ownId='" + ownId + '\'' +
-                ", parentId='" + parentId + '\'' +
-                ", message='" + message + '\'' +
-                ", createTime=" + createTime +
-                '}';
-    }
 }

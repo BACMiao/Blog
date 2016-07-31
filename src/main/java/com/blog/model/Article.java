@@ -3,15 +3,17 @@ package com.blog.model;
 import java.util.Date;
 
 /**
- *
- * Created by Black on 2016/6/4.
+ * @package: com.blog.model
+ * @Author: 陈淼
+ * @Date: 2016/6/4
+ * @Description: 文章的模型类
  */
 public class Article {
     private int id;
     private String title;
     private Date createTime;
-    private String articlePath;
-    private int categoryId;
+    private String articlePath;     //文章存储的文件路径
+    private int categoryId;         //该文章所对应的类别的ID
     private String articleDescribe;
 
     public int getId() {
@@ -62,15 +64,4 @@ public class Article {
         this.articleDescribe = articleDescribe;
     }
 
-    @Override
-    public String toString() {
-        return "Article{" +
-                "id=" + id +
-                ", title='" + title + '\'' +
-                ", createTime=" + createTime +
-                ", articlePath='" + articlePath + '\'' +
-                ", categoryId=" + categoryId +
-                ", articleDescribe='" + articleDescribe + '\'' +
-                '}';
-    }
 }

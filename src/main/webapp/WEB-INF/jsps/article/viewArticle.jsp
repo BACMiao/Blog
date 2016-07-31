@@ -50,13 +50,13 @@
                 <hr/>
                 <form action="/discuss/add?articleId=${article.id}" method="post">
                     发表评论：
-                    <div>
-                        <textarea id="message" name="message"></textarea>
-                        <div class="button">
-                            <input type="submit" class="btn btn-primary" value="评论"/>
-                            <input type="reset" class="btn btn btn-warning" value="清空"/>
+                        <div id="discuss_message">
+                            <textarea id="message" name="message" placeholder="请先登入才能发表评论" disabled></textarea>
+                            <div class="button">
+                                <input type="submit" class="btn btn-primary" value="评论" disabled/>
+                                <input type="reset" class="btn btn btn-warning" value="清空" disabled/>
+                            </div>
                         </div>
-                    </div>
                 </form>
             </div>
         </div>
@@ -86,6 +86,14 @@
                     }else {
                         $content.show();
                     }
+                }
+            });
+
+            $(function(){
+                var loginUsername="<%=session.getAttribute("loginUsername")%>";
+                if (loginUsername!='null'){
+                    $("textarea").removeAttr("placeholder disabled");
+                    $("input").removeAttr("disabled")
                 }
             });
         })

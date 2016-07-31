@@ -3,18 +3,22 @@ package com.blog.serviceImpl;
 import com.blog.dao.CategoryDao;
 import com.blog.model.Category;
 import com.blog.service.CategoryService;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
 
 /**
- *
- * Created by Black on 2016/6/5.
+ * @package: com.blog.serviceImpl
+ * @Author: 陈淼
+ * @Date: 2016/6/5
+ * @Description: 类别操作的服务的具体实现类
  */
 @Service
 public class CategoryServiceImpl implements CategoryService {
 
+    //使用spring注入
     private CategoryDao categoryDao;
 
     @Override
@@ -27,6 +31,7 @@ public class CategoryServiceImpl implements CategoryService {
         return categoryDao.findAllCategory();
     }
 
+    //判断类别是否存在，一个博客中不应该存在相同的类别
     @Override
     public boolean existCategory(String categoryName) throws Exception {
        Category category = categoryDao.findCategoryByName(categoryName);
@@ -47,6 +52,7 @@ public class CategoryServiceImpl implements CategoryService {
         }
     }
 
+    //类别下文章的具体数量，将本身的数量+1再重新赋值并更新
     @Override
     public void categoryNumber(Category category) throws Exception {
         category.setNumber(category.getNumber()+1);

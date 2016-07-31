@@ -67,7 +67,7 @@
                 <c:forEach var="article" items="${articlesByCid}" >
                     <a href="/article/viewArticle?id=${article.id}" id="a1" style="text-decoration: none;" class="article">${article.title}</a>
                     <p class="describe">${article.articleDescribe}</p>
-                    <div class="bottom">${article.createTime}|浏览|评论|博客分类：${article.categoryName}</div>
+                    <div class="bottom">${article.createTime}|博客分类：${article.categoryName}</div>
                     <hr style="border-top-style:dotted"/>
                 </c:forEach>
             </div>

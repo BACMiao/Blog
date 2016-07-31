@@ -7,8 +7,10 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 /**
- *
- * Created by Black on 2016/6/6.
+ * @package: com.blog.service
+ * @Author: 陈淼
+ * @Date: 2016/6/6
+ * @Description: 文章操作的服务接口
  */
 public interface ArticleService {
     public void addArticle(Article article)throws Exception;

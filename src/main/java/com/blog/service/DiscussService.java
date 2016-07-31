@@ -7,8 +7,10 @@ import javax.servlet.http.HttpSession;
 import java.util.List;
 
 /**
- *
- * Created by Black on 2016/6/8.
+ * @package: com.blog.service
+ * @Author: 陈淼
+ * @Date: 2016/6/8
+ * @Description: 讨论操作的服务接口
  */
 public interface DiscussService {
     public void addDiscuss(Discuss discuss, HttpSession session, Integer articleId) throws Exception;

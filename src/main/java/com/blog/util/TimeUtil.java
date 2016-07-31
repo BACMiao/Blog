@@ -5,12 +5,13 @@ import java.text.SimpleDateFormat;
 import java.util.Date;
 
 /**
- *
- * Created by Black on 2016/6/6.
+ * @package: com.blog.util
+ * @Author: 陈淼
+ * @Date: 2016/6/6
+ * @Description: 时间工具类，格式化时间的为自定义的格式
  */
 public class TimeUtil {
-    public TimeUtil() {
-    }
+    public TimeUtil() {}
 
     public static Date addTime() throws ParseException {
         SimpleDateFormat dateformat = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");

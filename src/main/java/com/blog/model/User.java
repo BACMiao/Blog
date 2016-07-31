@@ -3,14 +3,17 @@ package com.blog.model;
 import java.io.Serializable;
 
 /**
- * Created by Black on 2016/5/21.
- **/
+ * @package: com.blog.model
+ * @Author: 陈淼
+ * @Date: 2016/5/21
+ * @Description: 用户的模型类
+ */
 public class User implements Serializable{
     private int uid;
     private String username;
     private String password;
-    private String salt;
-    private String power;
+    private String salt;      //盐，用于密码加密
+    private String power;     //权限
 
     public int getUid() {
         return uid;

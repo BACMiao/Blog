@@ -55,10 +55,10 @@
         $(function(){
             var loginUsername="<%=session.getAttribute("loginUsername")%>";
             if (loginUsername=='null'){
-                $(".edit").hide();
+                $(".edit").remove();
             }
             else if (loginUsername!='null'){
-                $(".userLogin").hide();
+                $(".userLogin").remove();
             }
         });
 

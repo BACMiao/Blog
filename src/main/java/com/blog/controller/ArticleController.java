@@ -21,8 +21,10 @@ import javax.servlet.http.HttpServletRequest;
 import java.util.List;
 
 /**
- *
- * Created by Black on 2016/6/6.
+ * @package: com.blog.controller
+ * @Author: 陈淼
+ * @Date: 2016/6/6
+ * @Description: 文章的控制类，用于拦截url为/article/*的所有请求
  */
 @Controller
 @RequestMapping("/article")
@@ -35,33 +37,41 @@ public class ArticleController {
     @Autowired
     CategoryService categoryService;
 
+    //跳转至添加信息的界面
     @RequestMapping("/add")
     public String add(){
         return "article/add";
     }
 
+    //处理添加文章
     @RequestMapping("/addArticle")
     public String addArticle(@RequestParam("file") CommonsMultipartFile file,
                               Article article, HttpServletRequest request) throws Exception {
+        //格式化添加时间
         article.setCreateTime(TimeUtil.addTime());
+        //将文章的存储路径写入文章属性中
         article.setArticlePath(UploadUtil.upload(file, article, request));
         articleService.addArticle(article);
         return "article/success";
     }
 
+    //传递与文章相关的信息，包括评论、回复、类别等，参数id为文章的id
     @RequestMapping("/viewArticle")
     public String viewArticle(@RequestParam(value = "id", required = true) Integer id,
                               Model model) throws Exception {
+        //获取特定id的文章信息，但不包括正文
         Article article = articleService.selectArticleById(id);
+        //获取所有评论、回复、类别，写入到model中传递到特定页面
         List<List> lists = discussService.getAllDiscuss(id);
         List<Category> categories = categoryService.findAllCategory();
-        model.addAttribute("discuss", lists.get(0));
-        model.addAttribute("reply", lists.get(1));
+        model.addAttribute("discuss", lists.get(0)); //lists中第一个list为评论
+        model.addAttribute("reply", lists.get(1));   //lists中第二个list为回复
         model.addAttribute("article", article);
         model.addAttribute("category", categories);
         return "article/viewArticle";
     }
 
+    //传递文章正文，使用json的方法
     @RequestMapping(value="/json", produces = "text/html;charset=UTF-8")
     public @ResponseBody String jsonArticle(@RequestParam(value = "id", required = true)Integer id,
                                          HttpServletRequest request) throws Exception {
@@ -80,6 +90,7 @@ public class ArticleController {
         return "article/findArticle";
     }
 
+    //替换方法，还未用上
     @RequestMapping(value = "/findAllArticle", produces = "text/html;charset=UTF-8")
     public @ResponseBody String findAllArticle() throws Exception {
         List<ArticleCustom> articles = articleService.selectAllArticle();
