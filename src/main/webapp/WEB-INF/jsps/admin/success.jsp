@@ -10,19 +10,23 @@
 <html>
 <head>
     <c:set var="ctx" value="${pageContext.request.contextPath}" />
-    <link rel="stylesheet" type="text/css" href="${ctx}/resources/css/index.css" />
     <title>博客管理系统</title>
+    <link href="${ctx}/resources/css/admin_main.css" rel="stylesheet" type="text/css"/>
+    <link href="${ctx}/resources/css/main.css" rel="stylesheet" type="text/css"/>
+    <link href="${ctx}/resources/bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
-<div id="wrapper">
-    <div id="header">
-        <div id="logo"></div>
-        <div id="title">博客管理系统</div>
-        <div id="user_info">
-            <div id="welcome">欢迎管理员：${sessionScope.adminName}</div>
-            <div id="logout"><a href="/admin/adminLogout">安全退出</a></div>
-        </div>
+<nav class="navbar" role="navigation">
+    <div class="navbar-inner">
+            <div id="title" class="pull-left">博客管理系统</div>
+            <div id="user_info">
+                <div id="welcome">欢迎管理员：${sessionScope.adminName}</div>
+                <div id="logout"><a href="/admin/adminLogout">安全退出</a></div>
+            </div>
     </div>
+</nav>
+<div id="wrapper">
+
     <div id="navigator">
         <iframe src="/admin/tree"></iframe>
     </div>
