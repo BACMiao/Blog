@@ -6,6 +6,7 @@ import com.blog.model.ArticleCustom;
 import com.blog.model.Category;
 import com.blog.service.ArticleService;
 import com.blog.service.CategoryService;
+import com.blog.util.FileUtil;
 import com.blog.util.MarkdownUtil;
 
 import org.springframework.beans.factory.annotation.Autowired;
@@ -72,6 +73,19 @@ public class ArticleServiceImpl implements ArticleService {
     }
 
     @Override
+    public boolean deleteArticleById(Integer id, HttpServletRequest request) throws Exception {
+        Article article = articleDao.findArticleById(id);
+        //先删除指定路径下的文章具体内容，删除成功接着删除数据库中的数据，并且将类别的文章数减1
+        if (FileUtil.delete(article.getArticlePath(),request)){
+            Category category = categoryService.findCategoryById(article.getCategoryId());
+            categoryService.categoryNumberDown(category);
+            articleDao.deleteArticleById(id);
+            return true;
+        }
+        return false;
+    }
+
+    @Override
     public void addArticle(Article article) throws Exception {
         if (existArticle(article.getTitle())) {
             System.out.println("文件存在");
@@ -80,7 +94,7 @@ public class ArticleServiceImpl implements ArticleService {
             System.out.println("上传成功");
             //文章上传成功，给相应的类别下具有的文章数+1
             Category category = categoryService.findCategoryById(article.getCategoryId());
-            categoryService.categoryNumber(category);
+            categoryService.categoryNumberUp(category);
             articleDao.insertArticle(article);
         }
     }

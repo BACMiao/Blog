@@ -54,8 +54,15 @@ public class CategoryServiceImpl implements CategoryService {
 
     //类别下文章的具体数量，将本身的数量+1再重新赋值并更新
     @Override
-    public void categoryNumber(Category category) throws Exception {
+    public void categoryNumberUp(Category category) throws Exception {
         category.setNumber(category.getNumber()+1);
+        updateCategory(category.getCid(),category);
+    }
+
+    //类别下文章的具体数量，将本身的数量-1再重新赋值并更新
+    @Override
+    public void categoryNumberDown(Category category) throws Exception {
+        category.setNumber(category.getNumber()-1);
         updateCategory(category.getCid(),category);
     }
 

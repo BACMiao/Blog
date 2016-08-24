@@ -42,14 +42,14 @@
         </property>
     </bean>
 
-    <!-- 拦截器 -->
-    <mvc:interceptors>
-        <bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor"/>
-        <mvc:interceptor>
-            <mvc:mapping path="/admin/**"/>
-            <mvc:mapping path="/article/add*"/>
-            <mvc:mapping path="/category/add*"/>
-            <bean class="com.blog.interceptor.AdminInterceptor"/>
-        </mvc:interceptor>
-    </mvc:interceptors>
+    <!--&lt;!&ndash; 拦截器 &ndash;&gt;-->
+    <!--<mvc:interceptors>-->
+        <!--<bean class="org.springframework.web.servlet.i18n.LocaleChangeInterceptor"/>-->
+        <!--<mvc:interceptor>-->
+            <!--<mvc:mapping path="/admin/**"/>-->
+            <!--<mvc:mapping path="/article/add*"/>-->
+            <!--<mvc:mapping path="/category/add*"/>-->
+            <!--<bean class="com.blog.interceptor.AdminInterceptor"/>-->
+        <!--</mvc:interceptor>-->
+    <!--</mvc:interceptors>-->
 </beans>

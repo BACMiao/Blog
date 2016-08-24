@@ -8,7 +8,7 @@ import com.blog.service.ArticleService;
 import com.blog.service.CategoryService;
 import com.blog.service.DiscussService;
 import com.blog.util.TimeUtil;
-import com.blog.util.UploadUtil;
+import com.blog.util.FileUtil;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -50,7 +50,7 @@ public class ArticleController {
         //格式化添加时间
         article.setCreateTime(TimeUtil.addTime());
         //将文章的存储路径写入文章属性中
-        article.setArticlePath(UploadUtil.upload(file, article, request));
+        article.setArticlePath(FileUtil.upload(file, article, request));
         articleService.addArticle(article);
         return "article/success";
     }
@@ -106,5 +106,16 @@ public class ArticleController {
         List<ArticleCustom> articlesByCid = articleService.selectArticleByCid(cid);
         model.addAttribute("articlesByCid", articlesByCid);
         return "article/findArticleByCid";
+    }
+
+    //暂未使用
+    @RequestMapping(value = "deleteArticle", produces = "text/html;charset=UTF-8")
+    public @ResponseBody String deleteArticleById(@RequestParam(value = "id", required = true) int id,
+                                                  HttpServletRequest request) throws Exception {
+        JSONObject deleteArticle = new JSONObject();
+        boolean result = articleService.deleteArticleById(id, request);
+        deleteArticle.put("result", result);
+        System.out.println(deleteArticle.toJSONString());
+        return deleteArticle.toJSONString();
     }
 }

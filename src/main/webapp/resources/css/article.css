@@ -18,6 +18,17 @@
     word-break: normal;
 }
 
+#main #article #article-body  blockquote{
+    background-color: white;
+    font-style:oblique;
+}
+
+#main #article #article-body p{
+    font-size: larger;
+    line-height: 35px;
+
+}
+
 #main #article #discuss{
     font-size: 16px;
     margin: 10px 50px 3px 50px;

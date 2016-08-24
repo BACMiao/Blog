@@ -20,4 +20,5 @@ public interface ArticleService {
     public Article selectArticleById(Integer id) throws Exception;
     public List<ArticleCustom> selectArticleByTitle(String title) throws Exception;
     public List<ArticleCustom> selectArticleByCid(Integer cid) throws Exception;
+    public boolean deleteArticleById(Integer id, HttpServletRequest request) throws Exception;
 }

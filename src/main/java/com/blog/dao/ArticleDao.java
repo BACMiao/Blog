@@ -22,7 +22,7 @@ public interface ArticleDao {
     //根据类别cid查找该类下所有文章信息
     public List<ArticleCustom> findArticleByCid(int cid) throws Exception;
     public void insertArticle(Article article) throws Exception;
-    //暂时未实现删除文章功能
+    //根据文章id删除文章
     public void deleteArticleById(int id) throws  Exception;
     //暂时未实现更新文章功能
     public void updateArticleById(Article article) throws Exception;
