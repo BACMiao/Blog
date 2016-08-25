@@ -19,6 +19,7 @@
 }
 
 #main #article #article-body  blockquote{
+    color: black;
     background-color: white;
     font-style:oblique;
 }
