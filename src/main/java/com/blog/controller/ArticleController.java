@@ -55,6 +55,16 @@ public class ArticleController {
         return "article/success";
     }
 
+    //列出文章列表
+    @RequestMapping("/listArticle")
+    public String listArticle(Model model) throws Exception {
+        List<ArticleCustom> articles = articleService.selectAllArticle();
+        List<Category> categories = categoryService.findAllCategory();
+        model.addAttribute("articles", articles);
+        model.addAttribute("category", categories);
+        return "article/listArticles";
+    }
+
     //传递与文章相关的信息，包括评论、回复、类别等，参数id为文章的id
     @RequestMapping("/viewArticle")
     public String viewArticle(@RequestParam(value = "id", required = true) Integer id,
@@ -109,7 +119,7 @@ public class ArticleController {
     }
 
     //暂未使用
-    @RequestMapping(value = "deleteArticle", produces = "text/html;charset=UTF-8")
+    @RequestMapping(value = "/deleteArticle", produces = "text/html;charset=UTF-8")
     public @ResponseBody String deleteArticleById(@RequestParam(value = "id", required = true) int id,
                                                   HttpServletRequest request) throws Exception {
         JSONObject deleteArticle = new JSONObject();

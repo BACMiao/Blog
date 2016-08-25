@@ -27,7 +27,7 @@
 <div id="wrapper">
     <div id="navigator">
         <div class="sidebar-menu navbar">
-            <div id="navi">
+            <div class="navi">
                 <a class="brand" href="#hello">管理中心</a>
             </div>
             <ul class="nav nav-pills nav-stacked" id="myTree">
@@ -63,7 +63,7 @@
                         博文管理
                     </a>
                     <ul id="articleMeun" class="nav nav-list collapse menu-second">
-                        <li><a href="#"><i class="icon-list"></i> 博文列表</a></li>
+                        <li><a href="#articleList"><i class="icon-list"></i> 博文列表</a></li>
                         <li><a href="#articleAdd"><i class="icon-plus"></i> 博文添加</a></li>
                     </ul>
                 </li>
@@ -71,12 +71,15 @@
         </div>
     </div>
     <div id="main">
-        <%--<!-- 选项卡面板 -->--%>
-        <%--<div id="myTabContent" class="tab-content">--%>
+        <div class="navi">
+            <!-- 导航空白 -->
+        </div>
+        <div id="myTabContent" class="tab-content">
             <div class="tab-pane fade in active" id="hello"><iframe name="MainFrame" src="/admin/main"></iframe></div>
-            <%--<div class="tab-pane fade" id="categoryAdd"><iframe name="CategoryAdd" src="/category/add"></iframe></div>--%>
-            <%--<div class="tab-pane fade" id="articleAdd"><iframe name="ArticleAdd" src="/article/add"></iframe></div>--%>
-        <%--</div>--%>
+            <div class="tab-pane fade" id="categoryAdd"><iframe name="CategoryAdd" src="/category/add"></iframe></div>
+            <div class="tab-pane fade" id="articleList"><iframe name="ArticleList" src="/article/listArticle"></iframe></div>
+            <div class="tab-pane fade" id="articleAdd"><iframe name="ArticleAdd" src="/article/add"></iframe></div>
+        </div>
     </div>
     <%--<div id="footer">Copyright © 2009-2015 All Rights Reserved Powered By Somoniu</div>--%>
 </div>

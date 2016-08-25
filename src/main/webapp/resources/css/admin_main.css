@@ -6,6 +6,7 @@
     vertical-align: baseline;
     overflow:hidden;
 }
+
 body{
     min-height:600px;
     min-width:1280px;
@@ -16,36 +17,6 @@ body{
 	font-size:28px;
 }
 
-#menu_items{
-	list-style:none;
-	line-height: normal;
-	height: 34px;
-	line-height:34px;
-	vertical-align:middle;
-	font-size:14px;
-	border:2px solid;
-	border-right-style:groove;
-}
-.menu_item{
-	display: list-item;
-	float:left;
-	width:100px;
-    border-right-style:groove;
-	border-right:2px solid #F6F6F6;
-	cursor:pointer;
-}
-.on{
-	display: list-item;
-	float:left;
-	width:100px;
-	background:#77D1F6;
-	font-weight:bold;
-}
-.menu_item a{
-	height: 34px;
-	line-height:34px;
-	display:block;
-}
 #user_info {
     height: 35px;
     position: relative;
@@ -54,13 +25,16 @@ body{
     font-weight:bold;
     font-size:14px;
 }
+
 #welcome{
     position: relative;
 }
+
 #logout{
     margin-top: 15px;
     position: relative;
 }
+
 #footer{
     position: absolute;
 	float:left;
@@ -82,7 +56,7 @@ body{
     width:200px;
     margin:5px 2px 5px 2px;
     left:60px;
-    border: 2px solid black;
+    border: 2px solid #BFBFBF;
     border-radius: 12px;
 }
 #main{
@@ -92,7 +66,7 @@ body{
     width: 75%;
     margin:5px;
     left:80px;
-    border: 2px solid black;
+    border: 2px solid #BFBFBF;
     border-radius: 12px 12px;
     -moz-box-shadow: 6px 6px 12px #464647;
     -webkit-box-shadow: 6px 6px 12px #464647;
@@ -106,17 +80,22 @@ iframe{
     overflow:hidden;
 }
 
-#navi{
+.navi{
     width:100%;
     position:relative;
     word-wrap:break-word;
-    border-bottom:1px solid #065FB9;
-    margin:0;
-    padding:0;
+    border-bottom:1px solid #BFBFBF;
     height:40px;
-    line-height:40px;
-    vertical-align:middle;
     background-image: -moz-linear-gradient(top,#EBEBEB, #BFBFBF);
-    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #EBEBEB),color-stop(1,
-    #BFBFBF));
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #EBEBEB),color-stop(1, #BFBFBF));
+}
+
+#navigator .navi a{
+    font-weight:bold;
+    font-size: x-large;
+    padding-left: 70px;
+}
+
+#navigator .menu-first{
+    font-size: large;
 }
