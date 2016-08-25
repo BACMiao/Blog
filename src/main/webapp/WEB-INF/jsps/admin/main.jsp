@@ -48,9 +48,6 @@
 <div id="navi">
 	<!-- 导航空白 -->
 </div>
-<div id="tips">
-	<!-- 导航空白 -->
-</div>
 <div id="mainContainer">
    <img src="${ctx}/resources/image/welcome.jpg">
    <!--数据表格空白 -->

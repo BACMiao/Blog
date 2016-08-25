@@ -4,60 +4,18 @@
     margin: 0;
     padding: 0;
     vertical-align: baseline;
+    overflow:hidden;
 }
 body{
     min-height:600px;
     min-width:1280px;
 	overflow-y:hidden;
 }
-#wrapper {
-    background-image: -moz-linear-gradient(top,#77D1F6, #2F368F);  
-    background-image:-webkit-gradient(linear, left top, left bottom, color-stop(0, #77D1F6),color-stop(1, #2F368F)); 
-    font-family: "lucida Grande",Tahoma,Arial;
-    font-size: 12px;
-    overflow: hidden;
-    height:100%;
-    width:100%;
-    height:100%;
-}
 
 #title {
-    float: left;
-    height: 35px;
-	line-height:38px;
-	vertical-align:middle;
-    margin: 15px 0 0 1%;
-    width: 260px;
-	font-family:微软雅黑;
-	font-size:30px;
-	font-weight:bold;
-	text-align:center;
+	font-size:28px;
 }
-#menu{
-	position:absolute;
-	left:50%;
-	margin-top:15px;
-	margin-left:-300px;
-    float: right;
-    height: 38px;
-	width:615px;
-	line-height:38px;
-	vertical-align:middle;
-	text-align:center;
-    border-radius: 8px;
-    background-color:#000000;
-    opacity:0.5;
-}
-#menu_container{
-    position:relative;
-	margin:2px;
-	height: 34px;
-	line-height:34px;
-    vertical-align:middle;
-    border-radius: 8px;
-    background-image: -moz-linear-gradient(top,#EBEBEB, #BFBFBF);
-    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #EBEBEB),color-stop(1, #BFBFBF));
-}
+
 #menu_items{
 	list-style:none;
 	line-height: normal;
@@ -90,27 +48,18 @@ body{
 }
 #user_info {
     height: 35px;
-	line-height:35px;
-	vertical-align:middle;
     position: relative;
-	float:right;
-	margin-top:15px;
-	margin-right:70px;
-	width:180px;
+    float:right;
+    width:250px;
     font-weight:bold;
-	font-size:14px;
-    /*background-color: #0000FF;*/
+    font-size:14px;
 }
 #welcome{
-	left:-20px;
     position: relative;
-	float:left;
-    /*background-color: #FF0000;*/
 }
 #logout{
+    margin-top: 15px;
     position: relative;
-	float:right;
-    /*background-color: #006600;*/
 }
 #footer{
     position: absolute;
@@ -129,24 +78,24 @@ body{
 #navigator{
     position:relative;
     float:left;
+    height: 550px;
     width:200px;
     margin:5px 2px 5px 2px;
-    left:5px;
-    border: 2px solid #77D1F6;
+    left:60px;
+    border: 2px solid black;
     border-radius: 12px;
-    -moz-box-shadow: 6px 6px 12px #282828;
-    -webkit-box-shadow: 6px 6px 12px #282828;
 }
 #main{
     position:relative;
     float:left;
-    width: 80%;
+    height: 550px;
+    width: 75%;
     margin:5px;
-    left:5px;
-    border: 2px solid #77D1F6;
+    left:80px;
+    border: 2px solid black;
     border-radius: 12px 12px;
-    -moz-box-shadow: 6px 6px 12px #282828;
-    -webkit-box-shadow: 6px 6px 12px #282828;
+    -moz-box-shadow: 6px 6px 12px #464647;
+    -webkit-box-shadow: 6px 6px 12px #464647;
 }
 iframe{
     height:100%;
@@ -155,4 +104,19 @@ iframe{
     position:relative;
     border-radius:12px;
     overflow:hidden;
+}
+
+#navi{
+    width:100%;
+    position:relative;
+    word-wrap:break-word;
+    border-bottom:1px solid #065FB9;
+    margin:0;
+    padding:0;
+    height:40px;
+    line-height:40px;
+    vertical-align:middle;
+    background-image: -moz-linear-gradient(top,#EBEBEB, #BFBFBF);
+    background-image: -webkit-gradient(linear, left top, left bottom, color-stop(0, #EBEBEB),color-stop(1,
+    #BFBFBF));
 }
