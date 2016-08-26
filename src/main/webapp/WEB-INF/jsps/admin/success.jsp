@@ -82,7 +82,6 @@
             <div class="tab-pane fade" id="articleAdd"><iframe name="ArticleAdd" src="/article/add"></iframe></div>
         </div>
     </div>
-    <%--<div id="footer">Copyright © 2009-2015 All Rights Reserved Powered By Somoniu</div>--%>
 </div>
 <script src="${ctx}/resources/jquery/jquery-1.12.1.min.js"></script>
 <script src="${ctx}/resources/bootstrap/js/bootstrap.min.js"></script>

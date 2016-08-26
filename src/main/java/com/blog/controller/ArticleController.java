@@ -39,7 +39,9 @@ public class ArticleController {
 
     //跳转至添加信息的界面
     @RequestMapping("/add")
-    public String add(){
+    public String add(Model model) throws Exception {
+        List<Category> categories = categoryService.findAllCategory();
+        model.addAttribute("category", categories);
         return "article/add";
     }
 

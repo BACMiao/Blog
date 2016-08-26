@@ -1,0 +1,10 @@
+#add{
+    height: 80%;
+    width: 70%;
+    margin-top:30px;
+    margin-left: 200px;
+}
+
+#add .control-group label{
+    font-size: 20px;
+}

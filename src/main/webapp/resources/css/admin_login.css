@@ -121,14 +121,3 @@ body{
     text-align: center;
     text-shadow: 0 1px 1px #F6F6F6;
 }
-
-#footer{
-    margin-top:20px;
-    width:100%;
-}
-#footer #text{
-    text-align:center;
-    font-size:14px;
-    font-family:微软雅黑;
-    font-weight:bold;
-}
