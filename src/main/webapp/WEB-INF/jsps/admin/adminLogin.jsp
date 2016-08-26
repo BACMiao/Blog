@@ -10,44 +10,39 @@
 <html>
 <head>
     <c:set var="ctx" value="${pageContext.request.contextPath}" />
-    <link href="${ctx}/resources/css/admin_login.css" rel="stylesheet" type="text/css"/>
     <title>后台登录</title>
+    <link href="${ctx}/resources/css/admin_login.css" rel="stylesheet" type="text/css"/>
+    <link href="${ctx}/resources/bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="wrapper">
     <div id="header">
-        <div id="logo"></div>
         <div id="heading">
-            <div id="title">后台管理系统</div>
-            <div id="subTitle">Ver 2.0.0</div>
+            <div id="title">博客管理系统</div>
+            <div id="subTitle">Ver 2.1.0</div>
         </div>
     </div>
     <div id="main">
         <div id="mainBg">
             <div id="mainPanel">
-                <div id="left">
-                    <div id="image"></div>
-                </div>
-                <div id="right">
+                <div id="login">
                     <form name="loginForm" action="/admin/exist" method="post">
-                        <!-- start of login form -->
                         <div id="welcome">
-                            <span id="welcome-text">后&nbsp;台&nbsp;登&nbsp;录</span>
+                            <span id="welcome-text">后台登录</span>
                         </div>
                         <div id="user-name">
                             <span class="item">用户名:</span>
-                            <span><input type="text" name="username" class="form-input"></span>
+                            <span><input type="text" name="username" class="form-input" style="height:35px; width: 200px"></span>
                         </div>
                         <div id="user-password">
                             <span class="item">密&nbsp;&nbsp;&nbsp;码:</span>
-                            <span class="input"><input type="password" name="password" class="form-input"></span>
+                            <span class="input"><input type="password" name="password" class="form-input" style="height:35px; width: 200px"></span>
                         </div>
                         <div id="button-group">
                             <input type="submit" class="btn" value="登录"/>
                             <input type="reset" class="btn" value="重置"/>
                         </div>
                     </form>
-
                 </div>
             </div>
         </div>
