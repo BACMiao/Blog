@@ -10,7 +10,7 @@
 <html>
 <head>
     <c:set var="ctx" value="${pageContext.request.contextPath}" />
-    <title>博文列表</title>
+    <title>用户列表</title>
     <link href="${ctx}/resources/bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
