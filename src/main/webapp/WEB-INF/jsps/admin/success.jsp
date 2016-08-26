@@ -45,7 +45,7 @@
                         用户管理
                     </a>
                     <ul id="userMeun" class="nav nav-list collapse menu-second">
-                        <li><a href="#"><i class="icon-list"></i> 用户列表</a></li>
+                        <li><a href="#userList"><i class="icon-list"></i> 用户列表</a></li>
                         <li><a href="#"><i class="icon-edit"></i> 修改用户</a></li>
                     </ul>
                 </li>
@@ -76,6 +76,7 @@
         </div>
         <div id="myTabContent" class="tab-content">
             <div class="tab-pane fade in active" id="hello"><iframe name="MainFrame" src="/admin/main"></iframe></div>
+            <div class="tab-pane fade" id="userList"><iframe name="UserList" src="/user/listUser"></iframe></div>
             <div class="tab-pane fade" id="categoryAdd"><iframe name="CategoryAdd" src="/category/add"></iframe></div>
             <div class="tab-pane fade" id="articleList"><iframe name="ArticleList" src="/article/listArticle"></iframe></div>
             <div class="tab-pane fade" id="articleAdd"><iframe name="ArticleAdd" src="/article/add"></iframe></div>

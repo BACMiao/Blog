@@ -8,6 +8,8 @@ import com.blog.util.MD5;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
+import java.util.List;
+
 /**
  * @package: com.blog.serviceImpl
  * @Author: 陈淼
@@ -28,6 +30,11 @@ public class UserServiceImpl implements UserService{
     @Override
     public User findUserByName(String username) throws Exception {
         return userDao.findUserByName(username);
+    }
+
+    @Override
+    public List<User> findUserByList(User user) throws Exception {
+        return userDao.findUserByList(user);
     }
 
     //更新用户信息

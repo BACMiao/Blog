@@ -118,7 +118,7 @@ public class ArticleController {
         return "article/findArticleByCid";
     }
 
-    //暂未使用
+    //删除文章，并返回json数据
     @RequestMapping(value = "/deleteArticle", produces = "text/html;charset=UTF-8")
     public @ResponseBody String deleteArticleById(@RequestParam(value = "id", required = true) int id,
                                                   HttpServletRequest request) throws Exception {

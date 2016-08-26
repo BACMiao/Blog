@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
 import javax.servlet.http.HttpSession;
+import java.util.List;
 
 /**
  * @package: com.blog.controller
@@ -108,5 +109,13 @@ public class UserController {
             session.invalidate();
         }
         return "redirect:/";
+    }
+
+    //列出用户列表
+    @RequestMapping("/listUser")
+    public String listUser(Model model,User user) throws Exception {
+        List<User> users = userService.findUserByList(user);
+        model.addAttribute("users", users);
+        return "user/listUsers";
     }
 }
