@@ -14,7 +14,7 @@
     <link href="${ctx}/resources/bootstrap/css/bootstrap.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
-    <table class="table table-striped">
+    <table id="articleTable" class="table table-striped">
         <thead>
         <tr>
             <th>序号</th>
@@ -31,7 +31,7 @@
                 <td>${article.title}</td>
                 <td><fmt:formatDate value="${article.createTime}" pattern="yyyy-MM-dd HH:mm:ss"/></td>
                 <td>${article.categoryName}</td>
-                <td><div id="delete"><button class="btn btn-danger" type="button" name="${article.id}">删除</button></div></td>
+                <td><div id="delete"><input class="btn btn-danger" type="button" onclick="destory(${article.id})" value="删除"/></div></td>
             </tr>
         </c:forEach>
         </tbody>
@@ -40,10 +40,15 @@
 <script src="${ctx}/resources/jquery/jquery-1.12.1.min.js"></script>
 <script src="${ctx}/resources/bootstrap/js/bootstrap.min.js"></script>
 <script>
-    $("#delete button").bind("click", function(){
-        url = "/article/deleteArticle" ;
-        id = $("button").attr("name");
-        alert(id);
-    });
+    function destory(id){
+        url = "/article/deleteArticle?id="+id;
+        $.get(url,function(msg){
+            if (msg.result){
+                location.reload();
+            } else {
+                alert("删除失败！");
+            }
+        },'json');
+    }
 </script>
 </html>

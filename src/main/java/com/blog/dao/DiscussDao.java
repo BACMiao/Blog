@@ -19,6 +19,8 @@ public interface DiscussDao {
     public List<DiscussCustom> findDiscussUser(Integer articleId) throws Exception;
     public Discuss findDiscussById(Integer did) throws Exception;
     public void insertDiscuss(Discuss discuss) throws Exception;
-    ////暂时未实现删除讨论功能
+    //暂时未实现删除讨论功能
     public void deleteDiscussById(Integer did) throws  Exception;
+    //根据文章Aid删除讨论功能
+    public void deleteDiscussByAid(Integer articleId) throws Exception;
 }

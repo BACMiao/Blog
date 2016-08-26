@@ -6,6 +6,7 @@ import com.blog.model.ArticleCustom;
 import com.blog.model.Category;
 import com.blog.service.ArticleService;
 import com.blog.service.CategoryService;
+import com.blog.service.DiscussService;
 import com.blog.util.FileUtil;
 import com.blog.util.MarkdownUtil;
 
@@ -27,6 +28,7 @@ public class ArticleServiceImpl implements ArticleService {
     //使用spring注入
     private ArticleDao articleDao;
     private CategoryService categoryService;
+    private DiscussService discussService;
 
     //根据文章名称查询文章是否存在，因为该博客中不允许文章名一模一样
     @Override
@@ -75,10 +77,11 @@ public class ArticleServiceImpl implements ArticleService {
     @Override
     public boolean deleteArticleById(Integer id, HttpServletRequest request) throws Exception {
         Article article = articleDao.findArticleById(id);
-        //先删除指定路径下的文章具体内容，删除成功接着删除数据库中的数据，并且将类别的文章数减1
+        //先删除指定路径下的文章具体内容，删除成功接着删除数据库中的discuss数据和article数据，并且将类别的文章数减1
         if (FileUtil.delete(article.getArticlePath(),request)){
             Category category = categoryService.findCategoryById(article.getCategoryId());
             categoryService.categoryNumberDown(category);
+            discussService.deleteDiscussByAid(id);
             articleDao.deleteArticleById(id);
             return true;
         }
@@ -115,5 +118,14 @@ public class ArticleServiceImpl implements ArticleService {
     @Autowired
     public void setCategoryService(CategoryService categoryService) {
         this.categoryService = categoryService;
+    }
+
+    public DiscussService getDiscussService() {
+        return discussService;
+    }
+
+    @Autowired
+    public void setDiscussService(DiscussService discussService) {
+        this.discussService = discussService;
     }
 }

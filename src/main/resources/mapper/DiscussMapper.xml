@@ -17,6 +17,10 @@
     <delete id="deleteDiscussById" parameterType="int">
         DELETE FROM discuss WHERE did=#{did}
     </delete>
+
+    <delete id="deleteDiscussByAid" parameterType="int">
+        DELETE FROM discuss WHERE articleId=#{articleId}
+    </delete>
     
     <select id="findDiscussById" parameterType="int" resultType="com.blog.model.Discuss">
         SELECT * FROM discuss WHERE did=#{did}

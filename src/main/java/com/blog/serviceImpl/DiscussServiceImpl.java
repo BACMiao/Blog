@@ -79,6 +79,11 @@ public class DiscussServiceImpl implements DiscussService {
         return discuss.getArticleId();
     }
 
+    @Override
+    public void deleteDiscussByAid(Integer articleId) throws Exception {
+        discussDao.deleteDiscussByAid(articleId);
+    }
+
     public DiscussDao getDiscussDao() {
         return discussDao;
     }

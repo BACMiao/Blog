@@ -16,4 +16,5 @@ public interface DiscussService {
     public void addDiscuss(Discuss discuss, HttpSession session, Integer articleId) throws Exception;
     public List<List> getAllDiscuss(Integer articleId) throws Exception;
     public int addReply(Discuss reply, HttpSession session, Integer did) throws Exception;
+    public void deleteDiscussByAid(Integer articleId) throws Exception;
 }
