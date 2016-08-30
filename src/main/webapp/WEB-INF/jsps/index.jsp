@@ -31,24 +31,11 @@
                 <div class="carousel-inner" role="listbox">
                     <div class="item active">
                         <img src="${ctx}/resources/image/carousel1.jpg"/>
-                        <!-- 图片对应标题和描述内容 -->
-                        <div class="carousel-caption">
-                            <h4>图片标题</h4>
-                            <p>描述内容...</p>
-                        </div>
                     </div>
                     <div class="item">
                         <img src="${ctx}/resources/image/carousel2.jpg"/>
-                        <div class="carousel-caption">
-                            <h4>图片标题</h4>
-                            <p>描述内容...</p>
-                        </div>
                     </div>
                     <div class="item">
-                        <div class="carousel-caption">
-                            <h4>图片标题</h4>
-                            <p>描述内容...</p>
-                        </div>
                         <img src="${ctx}/resources/image/carousel3.jpg"/>
                     </div>
                 </div>

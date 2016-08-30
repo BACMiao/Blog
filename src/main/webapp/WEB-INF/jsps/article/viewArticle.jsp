@@ -15,7 +15,11 @@
     <link href="${ctx}/resources/css/article.css" rel="stylesheet" type="text/css"/>
 
 </head>
-<body>
+<body oncontextmenu='return false'
+      ondragstart='return false'
+      onselectstart ='return false'
+      onselect='document.selection.empty()'
+      onmouseup='document.selection.empty()'  >
     <div id="main">
         <jsp:include page="../base/head.jsp"/>
         <jsp:include page="../base/search.jsp"/>

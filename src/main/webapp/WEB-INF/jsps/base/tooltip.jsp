@@ -28,6 +28,15 @@
             </a></li>
         </ul>
     </div>
+    <div id="userMessage">
+        <img src="http://7xv9yx.com1.z0.glb.clouddn.com/92264-106.jpg">
+        <div id="introduce">
+            博主：猴子<br/>
+            性别：公<br/>
+            github：<br/>
+            https://github.com/BACMiao<br/>
+        </div>
+    </div>
     <div id="two-dimension-picture">
         <img src="http://7xv9yx.com1.z0.glb.clouddn.com/bapocalypseHead.png">
     </div>
@@ -59,11 +68,12 @@
 
     $(document).ready(function(){
         $("#two-dimension-picture").hide();
+        $("#userMessage").hide();
         $("#user-message").mouseenter(function(){
-            $("").show();
+            $("#userMessage").show();
         });
         $("#user-message").mouseleave(function(){
-            $("").hide();
+            $("#userMessage").hide();
         });
         $("#two-dimension").mouseenter(function(){
             $("#two-dimension-picture").show();
