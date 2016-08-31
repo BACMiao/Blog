@@ -15,7 +15,7 @@
     <link href="${ctx}/resources/css/admin_manage.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
-<div id="add">
+<div id="add_article">
     <form action="/article/addArticle" class="form-horizontal" method="post"  enctype="multipart/form-data">
         <div class="control-group">
             <label class="control-label" for="title">标题：</label>

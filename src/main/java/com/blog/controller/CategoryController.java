@@ -5,6 +5,7 @@ import com.blog.model.Category;
 import com.blog.service.CategoryService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
@@ -42,5 +43,13 @@ public class CategoryController {
         categoryMsg.put("categories", categories);
         System.out.println(categoryMsg.toString());
         return categoryMsg.toJSONString();
+    }
+
+    //列出类别列表
+    @RequestMapping("/listCategory")
+    public String listUser(Model model) throws Exception {
+        List<Category> categories = categoryService.findAllCategory();
+        model.addAttribute("categories", categories);
+        return "category/listCategories";
     }
 }

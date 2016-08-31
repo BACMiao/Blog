@@ -54,7 +54,7 @@
                         类别管理
                     </a>
                     <ul id="categoryMeun" class="nav nav-list collapse menu-second">
-                        <li><a href="#" target="MainFrame"><i class="icon-list"></i> 类别列表</a></li>
+                        <li><a href="#categoryList" target="MainFrame"><i class="icon-list"></i> 类别列表</a></li>
                         <li><a href="#categoryAdd"><i class="icon-plus"></i> 类别添加</a></li>
                     </ul>
                 </li>
@@ -77,6 +77,7 @@
         <div id="myTabContent" class="tab-content">
             <div class="tab-pane fade in active" id="hello"><iframe name="MainFrame" src="/admin/main"></iframe></div>
             <div class="tab-pane fade" id="userList"><iframe name="UserList" src="/user/listUser"></iframe></div>
+            <div class="tab-pane fade" id="categoryList"><iframe name="CategoryList" src="/category/listCategory"></iframe></div>
             <div class="tab-pane fade" id="categoryAdd"><iframe name="CategoryAdd" src="/category/add"></iframe></div>
             <div class="tab-pane fade" id="articleList"><iframe name="ArticleList" src="/article/listArticle"></iframe></div>
             <div class="tab-pane fade" id="articleAdd"><iframe name="ArticleAdd" src="/article/add"></iframe></div>
