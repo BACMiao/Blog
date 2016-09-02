@@ -14,7 +14,7 @@ public interface CategoryService {
     public Category findCategoryById(Integer cid) throws Exception;
     public List<Category> findAllCategory() throws Exception;
     public boolean existCategory(String categoryName) throws Exception;
-    public void addCategory(Category category) throws Exception;
+    public boolean addCategory(Category category) throws Exception;
     public void categoryNumberUp(Category category) throws Exception;
     public void categoryNumberDown(Category category) throws Exception;
     public void deleteCategory(Integer cid) throws Exception;

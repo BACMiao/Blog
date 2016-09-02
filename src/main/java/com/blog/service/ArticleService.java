@@ -13,7 +13,7 @@ import java.util.List;
  * @Description: 文章操作的服务接口
  */
 public interface ArticleService {
-    public void addArticle(Article article)throws Exception;
+    public boolean addArticle(Article article)throws Exception;
     public boolean existArticle(String title) throws Exception;
     public String getArticle(Integer id, HttpServletRequest request) throws Exception;
     public List<ArticleCustom> selectAllArticle()throws Exception;

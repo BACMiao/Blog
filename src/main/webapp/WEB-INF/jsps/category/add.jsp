@@ -16,16 +16,31 @@
 </head>
 <body>
 <div id="add_category">
-    <form action="/category/addCategory" class="form-horizontal" method="post">
+    <form action="#" class="form-horizontal" method="post">
         <div class="control-group">
-            <label class="control-label" for="category">类别：</label>
+            <label class="control-label" for="categoryName">类别：</label>
             <div class="controls">
-                <input name="categoryName" id="category" type="text" style="height:30px; width: 220px;"/>
-                <input type="submit" class="btn" value="增加"/>
+                <input name="categoryName" id="categoryName" type="text" style="height:30px; width: 220px;"/>
+                <input id="addButton" type="submit" class="btn" onclick="add()" value="增加"/>
             </div>
         </div>
     </form>
 </div>
 
+<script src="${ctx}/resources/jquery/jquery-1.12.1.min.js"></script>
+<script src="${ctx}/resources/bootstrap/js/bootstrap.min.js"></script>
+<script>
+    function add(){
+        $.getJSON("/category/addCategory",
+                { categoryName : $("#categoryName").val()},
+                function(json){
+                    if(json.result){
+                        alert("添加成功！");
+                    } else {
+                        alert("添加失败！")
+                    }
+                });
+    }
+</script>
 </body>
 </html>

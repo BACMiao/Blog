@@ -42,13 +42,15 @@ public class CategoryServiceImpl implements CategoryService {
     }
 
     @Override
-    public void addCategory(Category category) throws Exception {
+    public boolean addCategory(Category category) throws Exception {
         if (existCategory(category.getCategoryName())){
             System.out.println("添加失败");
+            return false;
         }
         else {
             categoryDao.insertCategory(category);
             System.out.println("添加成功");
+            return true;
         }
     }
 

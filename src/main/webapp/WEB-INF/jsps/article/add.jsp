@@ -24,9 +24,9 @@
             </div>
         </div>
         <div class="control-group">
-            <label class="control-label" for="category">类别：</label>
+            <label class="control-label" for="categoryId">类别：</label>
             <div class="controls">
-                <select name="categoryId" id="category">
+                <select name="categoryId" id="categoryId">
                     <c:forEach var="category" items="${category}" >
                         <option value="${category.cid}">${category.categoryName}</option>
                     </c:forEach>
@@ -47,7 +47,7 @@
         </div>
         <div class="control-group">
             <div class="controls">
-                <button type="submit" class="btn">发表</button>
+                <button id="addButton" type="submit" class="btn">发表</button>
             </div>
         </div>
     </form>

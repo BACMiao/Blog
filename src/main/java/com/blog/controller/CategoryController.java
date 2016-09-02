@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.ResponseBody;
 
+import javax.servlet.http.HttpSession;
 import java.util.List;
 
 /**
@@ -29,10 +30,13 @@ public class CategoryController {
         return "category/add";
     }
 
-    @RequestMapping("/addCategory")
-    public String addCategory(Category category) throws Exception {
-        categoryService.addCategory(category);
-        return "category/success";
+    @RequestMapping(value = "/addCategory", produces = "text/html;charset=UTF-8")
+    public @ResponseBody String addCategory(Category category) throws Exception {
+        JSONObject categoryAdd = new JSONObject();
+        boolean result = categoryService.addCategory(category);
+        categoryAdd.put("result",result);
+        System.out.println(categoryAdd.toJSONString());
+        return categoryAdd.toJSONString();
     }
 
     //获取所有类别的信息，使用json方法传递

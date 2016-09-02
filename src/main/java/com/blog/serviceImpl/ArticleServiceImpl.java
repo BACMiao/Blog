@@ -89,9 +89,10 @@ public class ArticleServiceImpl implements ArticleService {
     }
 
     @Override
-    public void addArticle(Article article) throws Exception {
+    public boolean addArticle(Article article) throws Exception {
         if (existArticle(article.getTitle())) {
             System.out.println("文件存在");
+            return false;
         }
         else {
             System.out.println("上传成功");
@@ -99,6 +100,7 @@ public class ArticleServiceImpl implements ArticleService {
             Category category = categoryService.findCategoryById(article.getCategoryId());
             categoryService.categoryNumberUp(category);
             articleDao.insertArticle(article);
+            return true;
         }
     }
 

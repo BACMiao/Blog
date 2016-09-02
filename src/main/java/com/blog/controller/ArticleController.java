@@ -54,7 +54,7 @@ public class ArticleController {
         //将文章的存储路径写入文章属性中
         article.setArticlePath(FileUtil.upload(file, article, request));
         articleService.addArticle(article);
-        return "article/success";
+        return "redirect:/article/listArticle";
     }
 
     //列出文章列表
